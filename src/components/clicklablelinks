@@ -1,0 +1,2 @@
+replace(/(www\..+?)(\s|$)/g, function(text, link) {
+   return '<a href="http://'+ link +'">'+ link +'</a>';

@@ -1,0 +1,7 @@
+@media not all and (min-resolution:.001dpcm) { 
+    @supports (-webkit-appearance:none) {
+        .pum-overlay .pum-content {
+            outline: none !important;
+        }
+    }
+  }

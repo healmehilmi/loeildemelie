@@ -1,0 +1,56 @@
+html{
+  position: relative;
+  min-height: 100%;
+}
+
+*{
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+ 
+}
+
+.site_button{
+  border: 1px solid;
+  background: white;
+  padding: 8px 16px;
+  font-size: 15px;
+  margin: 30px 0px;
+  border-radius: 12px;
+  outline: none !important;
+  color: #35342f;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+}
+@media only screen and (max-width: 600px) {
+  
+.site_button{
+  border: 1px solid black;
+  background: white;
+  padding: 8px 16px;
+  font-size: 15px;
+  margin: 0px 0px 10px 0px;
+  border-radius: 12px;
+  outline: none !important;
+
+}
+}
+a{
+  color: #5a5959;
+    text-decoration: none;
+    outline: none !important;
+}
+a:hover{
+
+  color: #000000;
+  outline: none !important;
+
+ 
+}
+@media not all and (min-resolution:.001dpcm) { 
+  @supports (-webkit-appearance:none) {
+      .pum-overlay .pum-content {
+          outline: none !important;
+      }
+  }
+}

@@ -1,0 +1,61 @@
+import React, {useState} from 'react'
+
+import axios from 'axios';
+import '../../styles/Container.css';
+
+import {useParams} from "react-router-dom"
+
+
+export default class Fashion extends React.Component {
+  const [posts, setPosts] = useState([])
+    state = {
+      posts: []
+    }
+
+    const {name-of-variable} = useParams()
+ 
+    
+
+    componentDidMount() {
+      
+        axios.get("https://graph.instagram.com/me/media?grant_type=ig_refresh_token&fields=id,caption,expires-in,media_url,permalink,children{media_url},username,picture&access_token=IGQVJYbXJMWGZAsNXZAaWTJFUnpaN29CN29QeC0zRk52X2R5Nk9vVUYxclh4V2IyeU5xQ0w0bTBseTNsSG02QVJ4YVdRajFBbC1mcWkxVllZAMDFxekYyUEJTbGo0RGNlaEhwUXlQaDhQS1laZAWtucW9QVgZDZD")
+        .then(res => {
+          const posts = res.data.data;
+          find(ele.caption.split() === name-of-variable)
+          this.setState({ posts });
+    
+        })
+    }
+   
+ 
+ 
+    render() {
+        return (
+          <div>
+               
+           
+            {
+              this.state.posts.filter(post => post.caption.includes('#loeilfashion'))
+                .map(post =>
+               
+                    <div className="portfolio_place">
+                    <div className="portfolio_containers">
+                        
+                        <img  className="container_img" key={post.id} src={post.media_url} alt="image_portfolio"/>
+                        <div className="portfolio_text">
+                           <p className="portfolio_caption" key={post.id}>{post.caption.split(" ")[0].slice(1).replace('_', ' ')}</p>
+                           
+                        </div> 
+                    </div>
+                </div>
+                
+                )
+            }
+             
+           
+             
+          </div>
+        )
+      }
+    }
+    
